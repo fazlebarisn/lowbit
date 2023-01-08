@@ -15,6 +15,14 @@
                 the_post();
                 get_template_part( 'template-parts/post/content' );
             endwhile;
+
+            // if have comment then disply them
+            if( comments_open() || get_comments_number() ): 
+                comments_template();
+            endif;
         ?>
     </main>
+    <?php get_sidebar() ?>
 </div>
+
+<?php get_footer(); ?>
