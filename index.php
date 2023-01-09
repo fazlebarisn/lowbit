@@ -11,7 +11,10 @@
  */
 
 get_header();
+    // display the search box
+    get_search_form();
 
+    // display the post
     if( have_posts() ):
         while( have_posts() ):
             the_post();
