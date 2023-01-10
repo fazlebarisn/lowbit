@@ -80,7 +80,51 @@ if( !function_exists( 'lowbit_theme_support' ) ){
                 'flex-width'  => true,
             )
         );
+
+        // custom header
+        add_theme_support(
+            'custom-header',
+            array(
+                'height'        => 450,
+                'width'         => 1600,
+                'flex-height'   => true,
+                'flex-width'    => true,
+                'default-image' => ''
+            )
+        );
+
+        // Add theme support for post formats
+        add_theme_support( 'post-formats', ['aside', 'gallery', 'link', 'image', 'quote', 'video', 'audio'] );
+
+        // Rrgister menu
+        register_nav_menus( array(
+            'primary' => esc_html__( 'Primary', 'lowbit' ),
+        ) );
     }
 }
-
 add_action( 'after_setup_theme', 'lowbit_theme_support' );
+
+// set theme content width
+function lowbit_content_width(){
+    $GLOBALS['content_width'] = apply_filters( 'lowbit_content_width', 1170 );
+}
+add_action( 'after_setup_theme', 'lowbit_content_width', 0 );
+
+
+// register sidebar
+function lowbit_sidebar_registration(){
+
+    register_sidebar( array(
+
+        'name'          => esc_html__( 'Sidebar', 'lowbit' ),
+        'id'            => 'default-sidebar',
+        'description'   => esc_html__( 'Add widget', 'lowbit' ),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</section>',
+        'before_title'  => '<h4 class="widget-title">',
+        'after_title'   => '<h4>'
+    ) );
+
+}
+
+add_action( 'widgets_init', 'lowbit_sidebar_registration' );
