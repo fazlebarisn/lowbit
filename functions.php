@@ -126,5 +126,16 @@ function lowbit_sidebar_registration(){
     ) );
 
 }
-
 add_action( 'widgets_init', 'lowbit_sidebar_registration' );
+
+// register public script
+function lowbit_public_scripts(){
+
+}
+add_action( 'wp_enqueue_scripts', 'lowbit_public_scripts' );
+
+// register admin script
+function lowbit_admin_scripts(){
+
+}
+add_action( 'admin_enqueue_scripts', 'lowbit_admin_scripts' );
