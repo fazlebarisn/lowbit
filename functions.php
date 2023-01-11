@@ -137,7 +137,7 @@ function lowbit_public_scripts(){
 
     // Vendor CSS Files
     wp_enqueue_style('lowbit-bootstrap', get_template_directory_uri(). '/assets/vendor/bootstrap/css/bootstrap.min.css', [], wp_rand(), 'all' );
-    wp_enqueue_style('lowbit-bootstrap-icons', get_template_directory_uri(). 'assets/vendor/bootstrap-icons/bootstrap-icons.css', [], wp_rand(), 'all' );
+    wp_enqueue_style('lowbit-bootstrap-icons', get_template_directory_uri(). '/assets/vendor/bootstrap-icons/bootstrap-icons.css', [], wp_rand(), 'all' );
     wp_enqueue_style('lowbit-aos', get_template_directory_uri(). '/assets/vendor/aos/aos.css', [], wp_rand(), 'all' );
     wp_enqueue_style('lowbit-glightbox', get_template_directory_uri(). '/assets/vendor/glightbox/css/glightbox.min.css', [], wp_rand(), 'all' );
     wp_enqueue_style('lowbit-swiper', get_template_directory_uri(). '/assets/vendor/swiper/swiper-bundle.min.css', [], wp_rand(), 'all' );
