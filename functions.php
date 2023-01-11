@@ -142,8 +142,17 @@ function lowbit_public_scripts(){
     wp_enqueue_style('lowbit-glightbox', get_template_directory_uri(). '/assets/vendor/glightbox/css/glightbox.min.css', [], wp_rand(), 'all' );
     wp_enqueue_style('lowbit-swiper', get_template_directory_uri(). '/assets/vendor/swiper/swiper-bundle.min.css', [], wp_rand(), 'all' );
     
-    // enqueue scripts
+    //Vendor JS Files 
+    wp_enqueue_script('lowbit-bootstrap', get_template_directory_uri(). '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js', ['jquery'], wp_rand(), true );
+    wp_enqueue_script('lowbit-aos', get_template_directory_uri(). '/assets/vendor/aos/aos.js', ['jquery'], wp_rand(), true );
+    wp_enqueue_script('lowbit-glightbox', get_template_directory_uri(). '/assets/vendor/glightbox/js/glightbox.min.js', ['jquery'], wp_rand(), true );
+    wp_enqueue_script('lowbit-isotope', get_template_directory_uri(). '/assets/vendor/isotope-layout/isotope.pkgd.min.js', ['jquery'], wp_rand(), true );
+    wp_enqueue_script('lowbit-swiper', get_template_directory_uri(). '/assets/vendor/swiper/swiper-bundle.min.js', ['jquery'], wp_rand(), true );
+    wp_enqueue_script('lowbit-validate', get_template_directory_uri(). '/assets/vendor/php-email-form/validate.js', ['jquery'], wp_rand(), true );
+
+    // Template Main JS File 
     wp_enqueue_script('lowbit-main', get_template_directory_uri(). '/assets/js/main.js', ['jquery'], wp_rand(), true );
+  
 }
 add_action( 'wp_enqueue_scripts', 'lowbit_public_scripts' );
 
