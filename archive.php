@@ -8,6 +8,7 @@
     get_header();
 ?>
 <div id="primary" class="content-area">
+
     <main id="main" class="site-main">
         <?php if( have_posts() ): ?>
             <header class="archive-page-header">
@@ -31,6 +32,10 @@
                 get_template_part( 'template-parts/page/content', 'none' );
             ?>
         <?php endif; ?>
+
+        // Display Sidebar
+        <?php get_sidebar(); ?>
+
     </main>
 </div>
 <?php get_footer(); ?>

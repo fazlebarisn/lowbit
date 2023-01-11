@@ -9,19 +9,30 @@
  * @package lowbit
  * @since 1.0
  */
-
 get_header();
-    // display the search box
-    get_search_form();
+?>
 
-    // display the post
-    if( have_posts() ):
-        while( have_posts() ):
-            the_post();
-            get_template_part( 'template-parts/post/content' );
-        endwhile;
-    endif; 
-
-get_footer();
+<div id="primary" class="content-area">
+    <main id="main" class="site-main">
+        <?php
+            // display the post
+            if( have_posts() ):
+                while( have_posts() ):
+                    the_post();
+                    get_template_part( 'template-parts/post/content' );
+                endwhile;
+                echo paginate_links( [
+                    'prev_text' => esc_html__( 'Prev', 'lowbit' ),
+                    'next_text' => esc_html__( 'Next', 'lowbit')
+                ] );
+            else:
+                get_template_part( 'template-parts/page/content', 'none' );
+            endif;  
+            // display sidebar
+            get_sidebar(); 
+        ?>
+    </main>
+</div>
+<?php get_footer(); ?>
 
     

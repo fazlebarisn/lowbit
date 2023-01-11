@@ -130,7 +130,12 @@ add_action( 'widgets_init', 'lowbit_sidebar_registration' );
 
 // register public script
 function lowbit_public_scripts(){
+    // enqueue style
+    wp_enqueue_style('lowbit-main', get_template_directory_uri(). '/assets/css/main.css', [], wp_rand(), 'all' );
+    wp_enqueue_style('lowbit-default', get_template_directory_uri(). '/assets/css/default.css', [], wp_rand(), 'all' );
 
+    // enqueue scripts
+    wp_enqueue_script('lowbit-main', get_template_directory_uri(). '/assets/js/main.js', ['jquery'], wp_rand(), true );
 }
 add_action( 'wp_enqueue_scripts', 'lowbit_public_scripts' );
 
