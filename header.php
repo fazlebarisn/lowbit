@@ -48,7 +48,7 @@
           ]);
         }else {
           printf(
-            '<a src="%1$s">%2$2</a>',
+            '<a href="%1$s">%2$s</a>',
             esc_url( admin_url( '/nav-menus.php') ),
             esc_html__( 'Asign a menu', 'lowbit' )
           );
@@ -84,6 +84,22 @@
       </nav><!-- .navbar -->
 
       <a class="btn-getstarted scrollto" href="index.html#about">Get Started</a>
-
+      <?php
+        if( has_nav_menu('header_action') ){
+          wp_nav_menu([
+            'theme_location'  =>'header_action',
+            'container'       => '',
+            'menu_class'      => '',
+            'menu_id'         => '',
+            'depth'           => 3
+          ]);
+        }else {
+          printf(
+            '<a href="%1$s">%2$s</a>',
+            esc_url( admin_url( '/nav-menus.php') ),
+            esc_html__( 'Asign a menu', 'lowbit' )
+          );
+        }
+      ?>
     </div>
   </header><!-- End Header -->

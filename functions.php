@@ -100,6 +100,7 @@ if( !function_exists( 'lowbit_theme_support' ) ){
         register_nav_menus( array(
             'primary' => esc_html__( 'Primary', 'lowbit' ),
             'footer' => esc_html__( 'Footer', 'lowbit' ),
+            'header_action' => esc_html__( 'Header Action', 'lowbit' ),
         ) );
     }
 }
