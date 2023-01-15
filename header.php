@@ -83,13 +83,13 @@
         <i class="bi bi-list mobile-nav-toggle d-none"></i>
       </nav><!-- .navbar -->
 
-      <a class="btn-getstarted scrollto" href="index.html#about">Get Started</a>
+      <!-- <a class="btn-getstarted scrollto" href="index.html#about">Get Started</a> -->
       <?php
         if( has_nav_menu('header_action') ){
           wp_nav_menu([
             'theme_location'  =>'header_action',
             'container'       => '',
-            'menu_class'      => '',
+            'menu_class'      => 'header-action-menu',
             'menu_id'         => '',
             'depth'           => 3
           ]);

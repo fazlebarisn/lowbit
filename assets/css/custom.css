@@ -1,0 +1,24 @@
+/* .header .btn-getstarted, .header .btn-getstarted:focus {
+    font-size: 16px;
+    color: var(--color-white);
+    background: var(--color-primary);
+    padding: 8px 23px;
+    border-radius: 4px;
+    transition: 0.3s;
+    font-family: var(--font-secondary);
+} */
+
+.header-action-menu li{
+    font-size: 16px;
+    background: var(--color-primary);
+    padding: 8px 23px;
+    border-radius: 4px;
+    transition: 0.3s;
+    list-style: none;
+
+}
+
+.header-action-menu li a{
+    color: var(--color-white);
+    font-family: var(--font-secondary);
+}
